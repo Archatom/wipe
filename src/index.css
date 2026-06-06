@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Blackbike";
+  src: url("/src/assets/fonts/Blackbike-Rough.otf") format("opentype"),
+       url("./assets/fonts/Blackbike-Rough.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-hearth-green: #1A4721;
+  --color-hearth-lime: #A6F780;
+  --color-hearth-bg: #fcf1d4;
+  --color-hearth-secondary: #E5E0CC;
+  --color-hearth-dark: #1A4721;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-hearth-bg text-hearth-dark antialiased;
+  }
+}
+
+@layer utilities {
+  .font-art {
+    font-family: "Blackbike", "Times New Roman", serif;
+  }
+
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+  
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+}
